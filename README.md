@@ -12,7 +12,7 @@ A Nuzlocke-style mod for **Plants vs. Zombies Fusion (RH)**. This mod introduces
 ## 🛠️ Installation
 
 1. Ensure you have [MelonLoader](https://melonloader.com) installed for PvZ Fusion.
-2. Download the `PvzRHNuzlocke.dll` from the [Releases](#) page.
+2. Download the `PvzRHNuzlocke.dll` from the [Releases](https://github.com/Tproplay/Pvz-Fusion-Nuzlocke/releases) page.
 3. Place the DLL into your game's `Mods` folder.
 4. Run the game!
 
