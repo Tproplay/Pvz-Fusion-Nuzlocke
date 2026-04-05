@@ -28,9 +28,15 @@ This project uses a custom `GamePath` variable in the `.csproj` to manage depend
      <GamePath>C:\Your\Path\To\Pvz\Fusion\Game Files</GamePath>
    </PropertyGroup>
 4. Build the solution using **Visual Studio**.
+
 ## 📂 Data Storage
+
 The mod saves data in JSON format within the MelonLoader/UserData directory:
+
 **NuzlockeBannedPlants.json:** Tracks which IDs are currently extinct.
+
 **NuzlockeRecipes.json:** Tracks discovered fusion combinations to apply recursive bans.
+
 ## ⚖️ License
+
 Distributed under the MIT License. See LICENSE for more information.
