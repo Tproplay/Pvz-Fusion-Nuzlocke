@@ -16,6 +16,11 @@ A Nuzlocke-style mod for **Plants vs. Zombies Fusion (RH)**. This mod introduces
 3. Place the DLL into your game's `Mods` folder.
 4. Run the game!
 
+## ⚠️ Important
+
+- It is recommeded to play this mod on a new account.
+- **Reset Mod:** To reset your banned plants, Simply delete `UserData\NuzlockeBannedPlants.json` file.
+
 ## 💻 For Developers (Building from Source)
 
 This project uses a custom `GamePath` variable in the `.csproj` to manage dependencies across different machines.
