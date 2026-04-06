@@ -8,6 +8,7 @@ A Nuzlocke-style mod for **Plants vs. Zombies Fusion**. This mod introduces perm
 - **Ancestors Banning:** Losing a Fusion plant also bans the specific parents used to create it.
 - **Instant Death:** Losing a plant also shovels all the Fusions made with with.
 - **Seed Selection Lockout:** Banned plants are hidden or unclickable in the seed selection menu.
+- **Safe Plants:** LilyPad and Flower Pot are added as Safe Plants and will not get removed when they are lost.
 
 ## 🛠️ Installation
 
