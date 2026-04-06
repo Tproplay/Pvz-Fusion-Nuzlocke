@@ -1,12 +1,12 @@
 # PvzRHNuzlocke
 
-A Nuzlocke-style mod for **Plants vs. Zombies Fusion (RH)**. This mod introduces permanent consequences to your gameplay: when a plant dies, it and all its fusion ancestors are banned from your seed library for the rest of the run.
+A Nuzlocke-style mod for **Plants vs. Zombies Fusion**. This mod introduces permanent consequences to your gameplay: when a plant dies, it and all its fusion ancestors are banned from your seed library for the rest of the run.
 
 ## 🚀 Features
 
 - **Permanent Death:** If a plant is eaten, shoveled, or crushed, you lose access to it.
-- **Recursive Banning:** Losing a Fusion plant also bans the specific parents used to create it.
-- **Automatic Persistence:** Your progress (banned plants and discovered recipes) is saved automatically in your `UserData` folder.
+- **Ancestors Banning:** Losing a Fusion plant also bans the specific parents used to create it.
+- **Instant Death:** Losing a plant also shovels all the Fusions made with with.
 - **Seed Selection Lockout:** Banned plants are hidden or unclickable in the seed selection menu.
 
 ## 🛠️ Installation
@@ -20,6 +20,11 @@ A Nuzlocke-style mod for **Plants vs. Zombies Fusion (RH)**. This mod introduces
 
 - It is recommeded to play this mod on a new account.
 - **Reset Mod:** To reset your banned plants, Simply delete `UserData\NuzlockeBannedPlants.json` file.
+
+## 📖 Some Tips to play this mod
+
+- Play it on lower Difficulties.
+- You can fuse the insta-plants, as it is not counted as Death Trigger.
 
 ## 💻 For Developers (Building from Source)
 
