@@ -3,8 +3,8 @@
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   
   <PropertyGroup>
-    <!-- Define the game path here so others can easily change it -->
-    <GamePath>..\..\..\..\Games\Pvz\Fusion RH\PvZF.3.5.Multi-lang\Game Files</GamePath>
+    <!-- Write you Gane Path here -->
+    <GamePath>D:\Games\Pvz\Fusion RH\PvZF.3.5.Multi-lang\Game Files</GamePath>
     
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
