@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using HarmonyLib;
@@ -13,6 +13,10 @@ namespace PvZ_Fusion_Nuzlocke
     public static class NuzlockeCore
     {
         public static HashSet<int> BannedIDs = new HashSet<int>();
+        public static List<int> SafeIDs = new List<int> {
+            (int)PlantType.LilyPad,
+            (int)PlantType.Pot
+            };
 
         // Map of how Fusions are made. 
         // Key: Fusion ID, Value: A list of parent pairs (int array [parent1, parent2])
@@ -78,13 +82,13 @@ namespace PvZ_Fusion_Nuzlocke
         /// </summary>
         public static void BanPlantID(int plantId)
         {
-            if (plantId < 0 || plantId == (int)PlantType.Nothing) return;
+            if (   plantId < 0
+                || plantId == (int)PlantType.Nothing
+                || BannedIDs.Contains(plantId)
+                || SafeIDs.Contains(plantId)
+                ) return;
 
-            // 1. Mark current plant as extinct
-            if (!BannedIDs.Contains(plantId))
-            {
-                BannedIDs.Add(plantId);
-            }
+            BannedIDs.Add(plantId);
 
             // 2. Look up every known way this plant was made and ban those parents too
             if (FusionRecipeBook.TryGetValue(plantId, out List<int[]> recipes))
@@ -95,29 +99,9 @@ namespace PvZ_Fusion_Nuzlocke
                     BanPlantID(parents[1]); // Recurse into Parent 2
                 }
             }
-
             WipeAllRelatedPlantsFromBoard(plantId);
         }
 
-        public static void BanRecursive(int plantId)
-        {
-            if (plantId < 0 || plantId == (int)PlantType.Nothing) return;
-
-            if (!BannedIDs.Contains(plantId))
-            {
-                BannedIDs.Add(plantId);
-                WipeAllRelatedPlantsFromBoard(plantId);
-            }
-
-            if (FusionRecipeBook.TryGetValue(plantId, out List<int[]> recipes))
-            {
-                foreach (var parents in recipes)
-                {
-                    BanRecursive(parents[0]);
-                    BanRecursive(parents[1]);
-                }
-            }
-        }
 
         private static void WipeAllRelatedPlantsFromBoard(int bannedId)
         {
@@ -199,7 +183,6 @@ namespace PvZ_Fusion_Nuzlocke
                 int deadId = (int)__instance.thePlantType;
 
                 NuzlockeCore.BanPlantID(deadId);
-                NuzlockeCore.BanRecursive(deadId);
                 NuzlockeCore.SaveAllData();
             }
         }
