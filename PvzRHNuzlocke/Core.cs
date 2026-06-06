@@ -1,9 +1,6 @@
 ﻿using MelonLoader;
-using UnityEngine;
-using HarmonyLib;
-using Il2Cpp;
 
-[assembly: MelonInfo(typeof(PvzRHNuzlocke.Core), "Nuzlocke", "3.5", "Tproplay")]
+[assembly: MelonInfo(typeof(PvzRHNuzlocke.Core), "Nuzlocke", "3.7", "Tproplay")]
 [assembly: MelonGame("LanPiaoPiao", "PlantsVsZombiesRH")]
 
 

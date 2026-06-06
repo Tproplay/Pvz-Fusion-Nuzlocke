@@ -187,23 +187,6 @@ namespace PvZ_Fusion_Nuzlocke
             }
         }
     }
-    
-    [HarmonyPatch(typeof(SeedLibrary), nameof(SeedLibrary.CreateCard))]
-    public static class SeedLibraryLockoutPatch
-    {
-        /// <summary>
-        /// Prevents Banned plants from being generated in the Seed Selection menu.
-        /// </summary>
-        public static bool Prefix(PlantType thePlantType, ref CardUI __result)
-        {
-            if (NuzlockeCore.BannedIDs.Contains((int)thePlantType))
-            {
-                __result = null;
-                return false;
-            }
-            return true;
-        }
-    }
 
     // 1. Block the interaction during seed selection so players can't even click on the card to select it.
     [HarmonyPatch(typeof(CardUI), nameof(CardUI.OnMouseDown))]
